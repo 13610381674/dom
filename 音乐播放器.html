@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+       <div>
+        <p>
+            <audio src="./1.mp3"></audio>
+            音乐1
+        </p>
+        <p>
+            <audio src="./2.mp3"></audio >
+                音乐2
+         </p>
+         <p>
+            <audio src="./3.mp3"></audio >
+                音乐3
+         </p>
+         <p>
+            <audio src="./4.mp3"></audio >
+                音乐4
+         </p>
+         <p>
+            <audio src="./5.mp3"></audio >
+                音乐5
+         </p>
+         <p>
+            <audio src="./6.mp3"></audio >
+                音乐6
+         </p>
+         <p>
+            <audio src="./7.mp3"></audio >
+                音乐7
+         </p>
+         <p>
+            <audio src="./8.mp3"></audio >
+                音乐8
+         </p>
+       </div>
+   </div>
+
+
+
+
+     <script>
+        var p= document.getElementsByTagName("p");
+        var audio= document.getElementsByTagName("audio");
+        for(var i =0;i<p.length;i++){
+      (function (i) {
+        p[i].onclick=function(){
+        //   console.log(i)
+     for(var j =0;j<audio.length;j++){
+     if (i==j) {
+        audio[j].play(); 
+     }else{
+        audio[j].pause(); 
+        audio[j].load();
+     }
+     }
+     
+    }
+      })(i)
+        }
+     </script>
+</body>
+</html>

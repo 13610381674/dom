@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app" style="margin: 0 auto;width: 980px;">
+       <a href="#" @click="comname='login'">登录</a>
+       <a href="#" @click="comname='reg'">注册</a>
+       <component :is="comname"></component>
+    </div>
+
+   <template id="login">
+       <div style="background-color: aqua;width: 500px;height: 600px;">
+           登录
+       </div>
+   </template>
+
+   <template id="reg">
+    <div style="background-color: green;width: 500px;height: 600px;">
+        注册
+    </div>
+</template>
+
+
+
+    <script>
+        Vue.component("login", {
+            template:'#login'
+        })
+
+        Vue.component("reg", {
+            template:'#reg'
+        })
+        var app =new Vue({
+            el:"#app",
+            data:{
+                comname:''
+            },
+            methods: {
+                
+            },
+        })
+    </script>
+</body>
+</html>

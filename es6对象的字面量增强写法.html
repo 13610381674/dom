@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+      //属性的增强写法
+      const name ='why';
+      const age=19;
+
+    //   es5写法
+      var dx ={
+          name:name,
+          age:age
+      }
+      console.log(dx)
+
+    //es6写法     这种写法内部把变量作为属性名  值作为属性的值        如 const name ='why';
+    var dx2={
+        name,
+        age
+    }
+   console.log(dx2)
+
+
+
+
+  //函数的增强写法
+   //es5写法
+   var dx3={
+       add:'add',
+       fun:function(){
+           console.log(this.add)
+       }
+   }
+   dx3.fun()
+
+
+   //es6写法
+   var dx4={
+       bbb:'bbb',
+       fc(){
+           console.log(this.bbb)
+       }
+   }
+   dx4.fc()
+
+
+
+
+//   增加知识点
+
+//       var obj2= new Object();
+//       obj2.name='obj2';
+//       console.log(obj2)
+
+
+//       //工厂
+//       var abj = function() {
+//    var obj = new Object();
+//    obj.name = 'gcobj3';
+   
+   
+//    return obj;
+// }
+
+// var c = new abj();
+// console.log(c.name)
+
+
+    </script>
+</body>
+</html>

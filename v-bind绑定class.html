@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 通过{}来绑定   值：true类显示   false隐藏 -->
+       <p v-bind:class="{aa,bb}">v-bind绑定class</p>
+       <!-- 也可以与普通类存在 -->
+       <p class="pt-class" v-bind:class="{aa,bb}">v-bind绑定class</p>
+        <!-- 通过[]来绑定  变量 返回class-ccc -->
+        <p v-bind:class="[cc]">v-bind绑定class</p>
+         <!-- 通过[]来绑定 字符串 返回cc -->
+        <p v-bind:class="['cc']">v-bind绑定class</p>  
+        <!-- isdd 返回true   增加dd类    返回false 不增加 -->
+        <p @click="dd" v-bind:class="{'dd':isdd}">v-bind绑定class</p>
+        <!-- 也可以是一个函数    ee() 返回字符串ee -->
+        <p v-bind:class="ee()">v-bind绑定class</p>
+    </div>
+
+
+
+
+
+    <script>
+        var app =new Vue({
+            el:"#app",
+            data:{
+             aa:false,
+             bb:true,
+             cc:"class-ccc",
+             isdd:true
+            },
+            methods: {
+                dd:function(){
+                    this.isdd=!this.isdd
+                },
+                ee:function(){
+                      return "ee"
+                }
+            },
+        })
+    </script>
+</body>
+</html>

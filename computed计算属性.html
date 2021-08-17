@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       
+       <h2>{{name}}{{age}}</h2>
+       <!-- methods方法 -->
+       <h2>{{fullname()}}</h2>
+       <!-- 计算属性 -->
+       <h2>{{fullnameComputed}}</h2>
+    </div>
+
+
+
+
+
+    <script>
+        var app =new Vue({
+            el:"#app",
+            data:{
+              name:"小明",
+              age:29
+            },
+            methods: {
+                fullname:function(){
+                    return this.name+this.age
+                }
+            },
+            computed: {
+                fullnameComputed(){
+                    return this.name+this.age
+                }
+            },
+
+        })
+    </script>
+</body>
+</html>

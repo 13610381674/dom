@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <h2>总价格{{topalPrice()}}</h2>
+       <h2>总价格{{Price}}</h2>
+    </div>
+
+
+
+
+
+    <script>
+        var app =new Vue({
+            el:"#app",
+            data:{
+            books:[
+                {id:1,name:'js',price:200},
+                {id:2,name:'h5cs3',price:100},
+                {id:3,name:'ajax',price:130},
+                {id:4,name:'vue',price:170}
+            ],
+            },
+            methods: {
+                topalPrice(){
+                    var price=0;
+                    
+                 for(let i=0;i<this.books.length;i++){
+                     price=price+this.books[i].price
+                 }
+                 return price
+                }
+            },
+            computed: {
+                Price(){
+                    var price=0;
+                    
+                    for(let i=0;i<this.books.length;i++){
+                        price=price+this.books[i].price
+                    }
+                    return price
+                }
+            },
+        })
+    </script>
+</body>
+</html>

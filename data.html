@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 数组 -->
+       <!-- {{array[4][3][0]}} -->
+       <p v-for="item in array">{{item.name}}</p>
+       <p v-for="item in array">{{item[2]}}</p>
+
+
+
+
+       <!-- 对象 -->
+       <p v-for="item in obj">{{item.names}}</p>
+       <p v-for="item in obj">{{item[0]}}</p>
+    </div>
+
+
+
+
+
+    <script>
+        var app =new Vue({
+            el:"#app",
+            data:{
+                array:[
+                    {name:"小明",age:19},
+                    {name:"小h",age:20},
+                    {name:"小s",age:21},
+                    {name:"小m",age:22},
+                    ["11111","222222",3333333],
+                    ["11111","222222",3333333],
+                    ["11111","222222",3333333],
+                    ["11111","222222",3333333],
+                    // ['小狗',34,{name:"小酷酷酷酷酷酷酷酷",age:35},["9999999999999999999999999"]]
+                ],
+                obj:{
+                   name:{names:"bbbbbb",ages:13},
+                   age:{names:"cccccc",ages:14},
+                   addr:["广东","北京"],
+                   addbbb:["上海","深圳"]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

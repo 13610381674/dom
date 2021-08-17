@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <p>{{names()}}</p>
+       <p>{{names()}}</p>
+       <p>{{names()}}</p>
+       
+       <p>{{namess}}</p>
+       <p>{{namess}}</p>
+       <p>{{namess}}</p>
+       <p>{{namess}}</p>
+       <p>{{namess}}</p>
+       <p>{{namess}}</p>
+    </div>
+
+
+
+
+
+    <script>
+        //总结：
+        //methods和computed的区别    methods没有缓存   computed有缓存,数据发生变化才会重新执行，计算结果返回，而methods调用一次执行一次，性能低
+        var app =new Vue({
+            el:"#app",
+            data:{
+                name:"小明"
+            },
+            methods: {
+                names:function(){
+                   console.log("methods---------")
+                   return this.name
+                }
+            },
+            computed: {
+                namess:function(){
+                    console.log("computed *******")
+                   return this.name
+                }
+            },
+        })
+    </script>
+</body>
+</html>
